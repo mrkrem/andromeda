@@ -25,9 +25,7 @@ def get_one_word(filename):
 pril = get_one_word('prils.txt')
 name = get_one_word('animals.txt')
 print(f'В племени индейцев Тумба-Юмба вас бы звали {pril} {name}')
-    
-    
-    
+        
     
     
 
