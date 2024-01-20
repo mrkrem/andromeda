@@ -16,24 +16,25 @@ def input_number(input_pharse):
         print('Вводить можно только числа')
         return input_number(input_pharse)
     return int(x)
-    
-while True:
-    x = input_number('Введите первое число: \n')
-
-    
-    y = input_number('Введите второе число: \n')
-    print('Меню: ')
-    print('1 - +')
-    print('2 - -')
-    print('3 - /')
-    print('4 - *')
-    action = input('Введите  знак операции: \n ')
-    if action == '+':
-        plus()
-    elif action == '-':
-        minus()
-    elif action == '/':
-        delenie()
-    elif action == '*':
-        umn()
-        
+def main():   
+    while True:
+        x = input_number('Введите первое число: \n')
+        action = input('Введите знак действия или выход для выхода')
+        y = input_number('Введите второе число: \n')
+        print('Меню: ')
+        print('1 - +')
+        print('2 - -')
+        print('3 - /')
+        print('4 - *')
+        action = input('Введите  знак операции: \n ')
+        if action == '+':
+            plus()
+        elif action == '-':
+            minus()
+        elif action == '/':
+            delenie()
+        elif action == '*':
+            umn()
+        elif action == 'выход':
+            break
+            

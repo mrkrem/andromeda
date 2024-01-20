@@ -1,3 +1,7 @@
+import calculator
+import functions_16
+import grandtextauto
+import wishlist_16
 def sign_up():
     login = input('Придумайте логин: ')
     password1 = input('Придумайте пароль: ')
@@ -38,7 +42,7 @@ def read_list(filename):
         text = file.read().split('\n')
         return text
         
-acces = False
+access = False
 while True:
     if not access:
         print('Это программа БоберКор, и вот что она умеет: ')
@@ -49,11 +53,26 @@ while True:
         if action == '1':
             sign_up()
         elif action == '2':
-            acces = sign_in()
+            access = sign_in()
         elif action == '3':
             print('Спасибо за использование программы')
             break
     elif access:
-        print('Вы в системе. Ураааааааааа')
+        print('Меню: ')
+        print('1 - запустить калькулятор')
+        print('2 - запустить текстокрафт')
+        print('3 - запустить grandtextauto')
+        print("4 - запустить список желаний")
+        action = input('Введите номер дейсвтия')
+        if action == '1':
+            calculator.main()
+        elif action == '2':
+            functions_16.main()
+        elif action == '3':
+            grandtextauto.main()
+        elif action == '4':
+            wishlist_16.main()
+            
+        
     input('Нажмите Enter, чтобы продолжить')
         

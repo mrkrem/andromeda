@@ -81,28 +81,30 @@ def craft():
     
 
     
-    
-while True:
-    key = input('Введите клавишу: ')
-    if key == 'w':
-        robot_forward()
-    elif key == 's':
-        robot_backward()
-    elif key == 'd':
-        robot_right()
-    elif key == 'a':
-        robot_left()
-    elif key == 'f':
-        item = robot_scan()
-        robot_pickup(item)
-    elif key == 'e':
-        check_inventory()
-    elif key == 'h':
-        say_steps()
-    elif key == 'c':
-        craft()
-        
-        
+def main():    
+    while True:
+        key = input('Введите клавишу(WASD, fec, x-выход): ')
+        if key == 'w':
+            robot_forward()
+        if key == 'x':
+            break
+        elif key == 's':
+            robot_backward()
+        elif key == 'd':
+            robot_right()
+        elif key == 'a':
+            robot_left()
+        elif key == 'f':
+            item = robot_scan()
+            robot_pickup(item)
+        elif key == 'e':
+            check_inventory()
+        elif key == 'h':
+            say_steps()
+        elif key == 'c':
+            craft()
+            
+            
 
 
     
