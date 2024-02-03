@@ -1,22 +1,18 @@
-PIZZA = ['Маргарита','Пепперони','4 Сыра','Гавайская']
-COST = [550, 675, 700, 850]
+from constatnts import *
+from order import *
 
-user_pizza = []
-user_cost = []
 
 def choice_pizza():
     print('Добро пожаловать в пиццерию "PIZZA DREAM"!')
     print('Меню пиццерии:')
     for i, pizza in enumerate(PIZZA):
         print(f'{i}.{pizza} - {COST[i]} рублей')
-        while True:
-            order = int(input('Выберите свою пиццу >>>'))
-            user_pizza.append(PIZZA[order-1])
-            user_cost.append(COST[order-1])
-            print('Пицца добавлена в корзину!')
-            flag = input('Хотите продолжить заказывать? ')
-            if flag.upper() == 'НЕТ':
-                print('Вы вышли из меню')
-                break
-            
-                
+    while True:
+        order = int(input('Выберите свою пиццу >>>')) - 1
+        get_order(order_pizza=order)
+        print('Пицца добавлена в корзину!')
+        flag = input('Хотите продолжить заказывать? ')
+        if flag.upper() == 'НЕТ':
+            print('Вы вышли из меню')
+            break
+        
