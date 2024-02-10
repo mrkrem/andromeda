@@ -8,7 +8,7 @@ def start():
     time.sleep(2)
     show_cost()
     pay()
-    
+ ИПГНКЛЬГЕКЛГНКЛГНГННЕКЕЕК    
 start()
 
 
