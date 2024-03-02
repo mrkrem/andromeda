@@ -1,19 +1,25 @@
 import random
 
+
 class Fighter:
-    def __init__(self, name:str, name_fatality:str):
+    def __init__(self, name:str, name_fatality:str, mana):
         self.name = name
         self.power = random.randint(1, 5)
         self.hp = 100
         self.nam_fat = name_fatality
         self.fat_switch = True
+        mana = mana
         
     def attack(self, attacked_fighter):
-        if self.fat_switch:
+        if self.fat_switch and self.mana == 100:
             self.fatality(attacked_fighter)
         attacked_fighter.hp -= self.power
         print(f'{self.name} наносит {self.power} ед. урона персонажу {attacked_fighter.name}')
         self.harakiri()
+        self.mana += 10
+
+            
+        
         
             
     def say_info(self):
@@ -25,13 +31,17 @@ class Fighter:
             attacked_fighter.hp -= damage
             print(f'{self.name} принимает суператаку {self.nam_fat} {self.name} и наносит {damage} ед. урона персонажу {attacked_fighter.name}')
             self.fat_switch = False
+        
+        
             
             
     def harakiri(self):
         if self.hp < 5 and random.randint(1, 2)==1:
             print(f'{self.name} совершил харакири')
             self.hp = 0
-            
+           
+           
+
 
 
 fighter1 = Fighter('Скорпион', 'Скорпионья супер атака')
